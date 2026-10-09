@@ -7,7 +7,7 @@ Shows your Claude extra-usage spend in the Claude Code status line, like `Claude
 Run this in a Claude Code terminal session:
 
 ```
-/plugin install usage-status --marketplace <owner>/<repo>
+/plugin install usage-status --marketplace kerby82/claude-usage-status
 ```
 
 Answer `y` to add the marketplace, then press Enter to pick the user scope. After that, it loads in every new session, including the Claude desktop Code tab.
