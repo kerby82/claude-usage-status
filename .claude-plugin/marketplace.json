@@ -1,0 +1,5 @@
+{
+  "name": "usage-status",
+  "owner": { "name": "Andrea Cirulli" },
+  "plugins": [{ "name": "usage-status", "source": "./" }]
+}
