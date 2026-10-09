@@ -1,6 +1,6 @@
 # usage-status
 
-Shows your Claude extra-usage spend in the Claude Code status line, like `Claude: $95.20 / $125.00 (76%)`. It updates after each reply. If it can't read your monthly spend, it shows the current session's cost instead (`Session: $X.XX`).
+Shows your Claude extra-usage spend and the current session's cost in the Claude Code status line, like `Claude: $95.20 / $125.00 (76%) · Session: $1.23`. It updates after each reply. If it can't read your monthly spend, it shows only the session cost.
 
 ## Install
 
@@ -30,7 +30,7 @@ Start a new session afterward. Sessions that are already open don't pick it up. 
 - **`could not lock config file ... .git/config`:** you ran the command from a sandboxed shell, such as a `!` command inside a Claude chat. Run it in a regular terminal app.
 - **`source doesn't match its extraKnownMarketplaces entry`:** the marketplace is already added under its other name. You can skip this step.
 - **`/plugin` isn't available:** the desktop Code tab doesn't support slash-command installs. Use the terminal commands above.
-- **It shows `Session: $...` only:** the plugin couldn't read your monthly extra usage, so it fell back to session cost. One known cause is that extra usage isn't turned on for your account.
+- **It shows `Session: $...` only:** the plugin couldn't read your monthly extra usage, so it shows only the session part. One known cause is that extra usage isn't turned on for your account.
 
 ## Update
 

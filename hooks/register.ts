@@ -1,15 +1,17 @@
 import type { EngineInterface, Register } from 'claude-code'
 
-async function refresh($: EngineInterface) {
+async function monthly($: EngineInterface): Promise<string | undefined> {
   try {
     const r: any = await $.tool.call({ tool: 'mcp__ccd_session_mgmt__get_usage' } as any)
     const x = JSON.parse(r.text ?? '{}').plan?.extraUsage
-    if (x?.enabled) {
-      return $.ui.status(`Claude: $${x.spent} / $${x.monthlyLimit} (${x.percentUsed}%)`)
-    }
+    if (x?.enabled) return `Claude: $${x.spent} / $${x.monthlyLimit} (${x.percentUsed}%)`
   } catch {}
+}
+
+async function refresh($: EngineInterface) {
   const { cost } = await $.session.usage()
-  $.ui.status(cost ? `Session: $${cost.usd.toFixed(2)}` : undefined)
+  const parts = [await monthly($), cost && `Session: $${cost.usd.toFixed(2)}`].filter(Boolean)
+  $.ui.status(parts.length ? parts.join(' · ') : undefined)
 }
 
 // ponytail: refreshes on session start and after each turn, not on a timer

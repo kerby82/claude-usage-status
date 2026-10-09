@@ -1,1 +1,1 @@
-{ "name": "usage-status", "version": "0.1.0", "description": "Shows Claude extra-usage spend and limit in the status line", "author": { "name": "Andrea Cirulli" } }
+{ "name": "usage-status", "version": "0.2.0", "description": "Shows Claude extra-usage spend and limit in the status line", "author": { "name": "Andrea Cirulli" } }
